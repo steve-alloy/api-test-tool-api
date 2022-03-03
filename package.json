@@ -1,0 +1,84 @@
+{
+	"name": "api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/server.js",
+	"scripts": {
+		"build": "tsc",
+		"start": "npm run build && node .",
+		"dev": "nodemon server.ts",
+		"lint": "prettier --write .",
+		"format": "eslint .",
+		"clean": "npm run lint && npm run format"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.26.0",
+		"fastify": "^3.27.2"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.21",
+		"@typescript-eslint/eslint-plugin": "^5.13.0",
+		"@typescript-eslint/parser": "^5.13.0",
+		"eslint": "^8.10.0",
+		"prettier": "^2.5.1",
+		"ts-node": "^10.6.0",
+		"typescript": "^4.6.2"
+	},
+	"eslintConfig": {
+		"env": {
+			"es2021": true,
+			"node": true
+		},
+		"extends": [
+			"eslint:recommended",
+			"plugin:@typescript-eslint/recommended",
+			"prettier"
+		],
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"ecmaVersion": "latest",
+			"sourceType": "module"
+		},
+		"plugins": [
+			"@typescript-eslint"
+		],
+		"ignorePatterns": [
+			"dist",
+			"node_modules",
+			"*.js"
+		],
+		"rules": {
+			"@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+			"linebreak-style": [
+				"error",
+				"unix"
+			],
+			"quotes": [
+				"error",
+				"double"
+			],
+			"semi": [
+				"error",
+				"always"
+			],
+			"no-unused-vars": 0
+		}
+	},
+	"eslintIgnore": [
+		"sandbox/"
+	],
+	"prettier": {
+		"trailingComma": "none",
+		"tabWidth": 2,
+		"semi": true,
+		"singleQuote": false,
+		"quoteProps": "consistent",
+		"bracketSpacing": true,
+		"bracketSameLine": true,
+		"arrowParens": "always",
+		"useTabs": true
+	}
+}
